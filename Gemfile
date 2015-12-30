@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'sorcery'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'sorcery', git: 'git://github.com/joe-re/sorcery.git', branch: 'for_rails5'
+gem 'oauth2', git: 'git://github.com/joe-re/oauth2.git', branch: 'for_rails5'
+# Bundle edge Rails istead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.beta1', '< 5.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
+gem 'active_model_serializers'
 # Use Puma as the app server
 gem 'puma'
 
