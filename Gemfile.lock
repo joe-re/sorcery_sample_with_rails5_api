@@ -46,6 +46,10 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.0.0)
+    ast (2.2.0)
+    astrolabe (1.3.1)
+      parser (~> 2.2)
+    bcrypt-ruby (3.0.1)
     builder (3.2.2)
     byebug (8.2.1)
     celluloid (0.17.2)
@@ -65,6 +69,7 @@ GEM
       timers (>= 4.1.1)
     celluloid-supervision (0.20.5)
       timers (>= 4.1.1)
+    coderay (1.1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -79,6 +84,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.8)
     execjs (2.6.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     faye-websocket (0.10.2)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
@@ -86,6 +93,7 @@ GEM
       activesupport (>= 4.1.0)
     hiredis (0.5.2)
     hitimes (1.2.3)
+    httpauth (0.2.1)
     i18n (0.7.0)
     json (1.8.3)
     loofah (2.0.3)
@@ -96,8 +104,25 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    multi_json (1.11.2)
+    multipart-post (2.0.0)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
+    oauth (0.4.7)
+    oauth2 (0.6.1)
+      faraday (~> 0.7)
+      httpauth (~> 0.1)
+      multi_json (~> 1.3)
+    parser (2.2.3.0)
+      ast (>= 1.1, < 3.0)
+    powerpack (0.1.1)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
+      pry (~> 0.10)
     puma (2.15.3)
     rack (2.0.0.alpha)
       json
@@ -129,8 +154,22 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    rainbow (2.0.0)
     rake (10.4.2)
     redis (3.2.2)
+    rubocop (0.35.1)
+      astrolabe (~> 1.3)
+      parser (>= 2.2.3.0, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      tins (<= 1.6.0)
+    ruby-progressbar (1.7.5)
+    slop (3.6.0)
+    sorcery (0.7.13)
+      bcrypt-ruby (~> 3.0.0)
+      oauth (~> 0.4.4)
+      oauth2 (~> 0.6.0)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -143,6 +182,7 @@ GEM
     thread_safe (0.3.5)
     timers (4.1.1)
       hitimes
+    tins (1.6.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     websocket-driver (0.6.3)
@@ -154,8 +194,12 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  pry
+  pry-byebug
   puma
   rails (>= 5.0.0.beta1, < 5.1)
+  rubocop
+  sorcery
   sqlite3
   tzinfo-data
 
