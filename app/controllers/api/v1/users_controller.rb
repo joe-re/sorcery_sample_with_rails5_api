@@ -12,7 +12,7 @@ module Api
           users: ActiveModel::ArraySerializer.new(
             users,
             each_serializer: UserSerializer
-          ).to_json
+          )
         }
       end
 
@@ -30,7 +30,7 @@ module Api
         user = User.new(user_params)
 
         if user.save
-          render json: UserSerializer.new(user)
+          render json: UserSerializer.new(user), status: :created
         else
           head :bad_request
         end

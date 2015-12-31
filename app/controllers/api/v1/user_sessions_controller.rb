@@ -5,7 +5,7 @@ module Api
 
       def create
         if user = login(login_user[:email], login_user[:password])
-          render json: UserSerializer.new(user).as_json.merge(access_token: user.activate.access_token)
+          render json: UserSerializer.new(user).as_json.merge(access_token: user.activate.access_token), status: :created
         else
           head :not_found
         end
@@ -20,7 +20,7 @@ module Api
         end
         user = User.find(api_key.user_id)
         user.inactivate
-        head :ok
+        head :no_content
       end
 
       private
